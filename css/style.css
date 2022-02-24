@@ -1,4 +1,365 @@
-* {
+@import url('https://fonts.googleapis.com/css2? family= Work+Sans & display=swap');
+
+
+:root {
+    --background: rgba(33, 116, 99, 0.98);
+}
+
+
+*, *::before, *::after {
     margin: 0;
     box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background: #fff;
+    font-family: 'Lato', 'Work Sans', sans-serif;
+    font-weight: 400;
+    position: relative;
+}
+
+
+.content {
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+
+/* navigation styles */
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.nav-toggle {
+    display: none;
+}
+
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;   
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}  
+
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+}
+
+
+nav a:hover {
+    color: #000;
+}
+
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+@media screen and (min-width: 900px) {
+    
+    .nav-toggle-label {
+        display: none;
+    }
+
+
+    header{
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;        
+    }
+
+    .logo {
+        grid-column: 2/3;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -0.80em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+
+    /*--inicio--*/
+
+    .inicio  h2 {
+        font-size: 50px;
+    }
+    
+
+    .inicio span {
+        font-size: 40px;
+    }
+
+    /*--aliados--*/
+
+    .aliados {
+        grid-template-columns: 30% 30% 30%;
+    }
+    
+
+}   
+
+
+
+/* styles content */
+
+
+
+.inicio {
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    color: #fff;
+    background-image: url(imagen-inicio.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.inicio h2 {
+    margin-top: 200px;
+}
+
+
+.inicio p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    word-spacing: 8px;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.whatsapp-btn {
+    border-radius: 8px;
+    background: #01e675;
+    padding: 15px 24px;
+    text-decoration: none;
+    color: #222;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.acerca-de {
+    margin-top: 120px;
+    margin-bottom: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.acerca-de h1 {
+    color: #5186EC;
+    text-align: center;
+    font-size: 50px;
+    text-decoration: ;
+}
+
+
+.acerca-de p {
+    color: darkslateblue;
+}
+
+
+#aliados {
+    width: 100%;
+    background-color: #222;
+}
+
+
+.aliados {
+    width: 100%;
+    display: grid;
+    gap: 2em;
+    justify-content: center;
+    color: #222;
+    padding-bottom: 100px;
+}
+
+
+.header-aliados {
+    text-align: center;
+    color: aliceblue;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+.aliados div {
+    height: 400px;
+    background-color: var(--background);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    box-shadow: 0px 3px 1px 3px rgb(141, 0, 12),
+                6px 0px 1px 3px rgb(17, 26, 14);
+}
+
+
+.aliados img {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.aliados h2 {
+    color: #000;
+    font-size: xx-large;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.aliados p {
+    margin-top: 8px;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: azure;
+}
+
+
+
+footer {
+    background: rgb(255, 255, 255);
+    color: #222;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding-top: 20px;
+    line-height: 20px;
+}
+
+
+footer li {
+    list-style: none;
+}
+
+footer p {
+    padding-bottom: 20px;
 }
