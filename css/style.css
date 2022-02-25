@@ -315,8 +315,8 @@ nav a:hover {
     margin-left: 15px;
     margin-right: 15px;
     flex-direction: column;
-    box-shadow: 0px 3px 1px 3px rgb(141, 0, 12),
-                6px 0px 1px 3px rgb(17, 26, 14);
+    box-shadow: 5px 5px 4px 2px #2c3e50,
+                6px -5px  #2c3e50;
 }
 
 
