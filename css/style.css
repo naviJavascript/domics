@@ -215,6 +215,7 @@ nav a:hover {
     
     .aliados div:hover {
         box-shadow: 1px 1px 6px 3px #10ac84;
+        transition: linear 0.5s;
     }
 }   
 
