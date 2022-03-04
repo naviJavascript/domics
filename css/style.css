@@ -284,6 +284,8 @@ nav a:hover {
     color: rgb(10, 13, 22);
     margin-left: 15px;
     margin-right: 15px;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 
@@ -319,6 +321,7 @@ nav a:hover {
     margin-right: 15px;
     flex-direction: column;
     border: solid #ee5253;
+    border-radius: 5px;
 }
 
 
